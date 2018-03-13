@@ -12,6 +12,7 @@ namespace lib;
 abstract class Controller
 {
     protected $data = [];
+    protected $model;
 
     /**
      * @return array
@@ -21,4 +22,9 @@ abstract class Controller
         return $this->data;
     }
 
+    protected function getDB()
+    {
+        $params = Config::get('db');
+        return new DB($params);
+    }
 }

@@ -1,7 +1,6 @@
-
-!!!<?=$data['message']?>!!!
-
-<br>
-
-<?=__('hello')?>
-
+<h1>Pages</h1>
+<ul>
+    <? foreach ($data['pages'] as $page) { ?>
+        <li><a href="/23/web/page/<?=$page['alias']?>"><?=$page['title']?></a></li>
+    <?}?>
+</ul>

@@ -1,6 +1,7 @@
 <?php
 namespace controller;
 use lib\Controller;
+use model\Page;
 
 /**
  * Created by PhpStorm.
@@ -11,6 +12,10 @@ use lib\Controller;
 
 class PageController extends Controller
 {
+    public function __construct()
+    {
+        $this->model = new Page($this->getDB());
+    }
     public function staticAction($params = [])
     {
         $id = $params['id'];
@@ -28,9 +33,14 @@ class PageController extends Controller
         return $result;
     }
 
-    public function indexAction()
+    public function testAction()
     {
         $this->data['message'] = 'Hello world';
+        $db = $this->getDB();
+    }
+    public function indexAction()
+    {
+        $this->data['pages'] = $this->model->getAllPages();
 
 //        return 'adsfasd/fasdf.php';
     }

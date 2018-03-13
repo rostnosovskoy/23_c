@@ -37,7 +37,7 @@ class DB
 
         try{
             $stmt = $this->pdo->prepare($sql);
-        } catch (\Exception $e)
+        } catch (\PDOException $e)
         {
             echo "Ошибка запроса к БД " . $e->getMessage();
             exit();
