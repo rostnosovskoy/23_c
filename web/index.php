@@ -5,6 +5,8 @@ use controller\PageController;
 
 
 require "../lib/autoload.php";
+require "../lib/functions.php";
+session_start();
 
 
 $params = $_GET;

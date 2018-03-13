@@ -19,6 +19,12 @@
     <title>Document</title>
 </head>
 <body>
+<?if ($msg = getFlash()) {?>
+    <div class="alert alert-success">
+        <?=$msg?>
+    </div>
+<?}?>
+
     <div class="contact-form">
         <form action="" method="post">
             <input type="text" class="form-control" name = "name" placeholder="Enter your name" />

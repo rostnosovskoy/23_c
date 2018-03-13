@@ -41,4 +41,9 @@ abstract class Controller
     {
         Router::redirect($url, $code);
     }
+
+    protected function setFlash($msg)
+    {
+        Session::getInstanse()->set('flash', $msg);
+    }
 }

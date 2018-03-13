@@ -13,3 +13,9 @@ function __($phrase, $default = '')
 
     return $lang->translate($phrase, $default);
 }
+
+function getFlash()
+{
+    $ses = \lib\Session::getInstanse();
+    return $ses->get('flash', true);
+}

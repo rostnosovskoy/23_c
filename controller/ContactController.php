@@ -29,6 +29,7 @@ class ContactController extends Controller
         $message = $_POST['message'];
 
         $this->model->addMessege([$name, $email, $message]);
+        $this->setFlash("Add messege");
         $this->redirect('/23/web/contact');
     }
 }
