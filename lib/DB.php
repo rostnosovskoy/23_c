@@ -42,6 +42,12 @@ class DB
             echo "Ошибка запроса к БД " . $e->getMessage();
             exit();
         }
+        foreach (['insert', 'update', 'delete'] as $word) {
+            $str = strtolower($sql);
+            if (strpos($str, $word) === 0){
+                return true;
+            }
+        }
 
         $res = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $res;

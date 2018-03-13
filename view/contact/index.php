@@ -24,7 +24,7 @@
             <input type="text" class="form-control" name = "name" placeholder="Enter your name" />
             <input type="text" class="form-control" name = "email" placeholder="Enter your email" />
             <textarea name="mess" class="form-control" id="" cols="30" rows="10" placeholder="Enter your message"></textarea>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Send</button>
+            <button class="btn btn-lg btn-primary btn-block" name="send" value="send" type="submit">Send</button>
         </form>
     </div>
 </body>

@@ -44,4 +44,13 @@ class PageController extends Controller
 
 //        return 'adsfasd/fasdf.php';
     }
+
+    public function actionView()
+    {
+        $alias = $this->params[0];
+        if (!$alias) {
+            throw new \Exception("No alias provided");
+        }
+        $this->data['page'] = $this->model->getPageByAlias($alias);
+    }
 }

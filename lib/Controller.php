@@ -13,6 +13,15 @@ abstract class Controller
 {
     protected $data = [];
     protected $model;
+    protected $params= [];
+
+    /**
+     * @param mixed $params
+     */
+    public function setParams($params)
+    {
+        $this->params = $params;
+    }
 
     /**
      * @return array
@@ -26,5 +35,10 @@ abstract class Controller
     {
         $params = Config::get('db');
         return new DB($params);
+    }
+
+    public function redirect($url, $code = 302)
+    {
+        Router::redirect($url, $code);
     }
 }

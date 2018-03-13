@@ -14,8 +14,21 @@ use lib\Controller;
 
 class ContactController extends Controller
 {
+    public function __construct()
+    {
+        $this->model = new Message($this->getDB());
+    }
     public function indexAction()
     {
-        
+        if (!@$_POST['send']){
+            return null;
+        }
+
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+
+        $this->model->addMessege([$name, $email, $message]);
+        $this->redirect('/23/web/contact');
     }
 }
